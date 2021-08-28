@@ -1,0 +1,27 @@
+body {
+    text-align: center;
+    background-color:lightgray;
+}
+
+h1 {
+    text-align: center;
+    font-size:200%;
+    border: solid 3px black;
+    margin-left: 280px;
+    margin-right:280px;
+    color:rgb(172, 93, 40);
+}
+
+h2 {
+    text-align: center;
+    font-size:200%;
+    border: solid 3px black;
+    margin-left: 280px;
+    margin-right: 280px;
+    color:rgb(172, 93, 40);
+}
+
+.button {
+    background-color:rgb(236, 139, 74);
+    font-size: 125%;
+}
