@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="N2.css">
+</head>
+<body>
+<h1>delivery details</h1>
+    <span>Choose item :</span>
+    <select id="brands" onchange="brandschange()">
+        <option value="nike">nike shoes</option>
+        <option value="adidas">adidas shoes</option>
+        <option value="vans">vans shoes</option>
+        <option value="reebok">reebok shoes</option>
+        <option value="diadora">diadora shoes</option>
+    </select><br><br>
+    
+    amount of units : <input type="number" id="unitamount"><br><br>
+    <button onclick="calc()" class="button">calculate</button><br><br>
+    unit price : <input type="nember" id="unitprice"><br><br>
+    total price : <input type="text" id="totalprice"><br><br>
+
+    <h2>order details</h2>
+
+   first name : <input type="text" id="firstname"><br><br>
+   last name :<input type="trxt" id="lastname"><br><br>
+   address : <input type="text" id="adress"><br><br>
+
+   city :
+   <select id="city">
+       <option value="tel">tel-aviv</option>
+       <optiom value="bat">bat yam</optiom>
+       <option value="rishon">rishon lezion</option>
+       <option value="holon">holon</option>
+       <option value="ramat">ramat gan</option>
+       <option value="petah">petah tikva</option>
+   </select><br><br>
+
+   street : <input type="text" id="street"><br><br>
+   zipCode : <input type="text" id="zipcode"><br><br>  
+   <input type="button" onclick="send()" value="order now" class="button"/><br><br>
+
+   <script>
+
+function calc(){
+    switch(brands.value){
+case "nike" : totalprice.value = 499*unitamount.value
+break;
+case "adidas" : totalprice.value = 299*unitamount.value
+break;
+case "vans" : totalprice.value = 349*unitamount.value
+break;
+case "reebok" : totalprice.value = 199*unitamount.value
+break;
+case "diadora" : totalprice.value = 250*unitamount.value
+break;
+
+    }
+}
+
+function brandschange(){
+let unitprice =0;
+
+if (document.getElementById("brands").value === "nike"){
+    unitprice = 499;
+}
+else if (document.getElementById("brands").value === "adidas"){
+    unitprice = 299;
+}
+else if (document.getElementById("brands").value === "vans") {
+    unitprice = 349;
+}
+else if (document.getElementById("brands").value === "reebok") {
+    unitprice = 199;
+}
+else if (document.getElementById("brands").value === "diadora") {
+    unitprice = 250;
+}
+
+document.getElementById("unitprice").value = unitprice
+}
+
+function send(){
+    let allabjects = {
+
+        firstname: document.getElementById("firstname").value,
+        lastname : document.getElementById("lastname").value,
+        adress: document.getElementById("adress").value,
+        city : document.getElementById("city").value,
+        street : document.getElementById("street").value,
+        zipcode : document.getElementById("zipcode").value,
+    }
+console.log(allabjects)
+}
+   </script>
+   
+</body>
+</html>
